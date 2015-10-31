@@ -10,9 +10,9 @@ python:
   # - "3.5-dev" # 3.5 development branch
   - "pypy"
 # command to install dependencies
-cache:
-  directories:
-    - $HOME/.cache/pip
+# cache:
+#   directories:
+#     - $HOME/.cache/pip
 install: 
 - "wget https://raw.githubusercontent.com/AndreaCensi/mcdp/master/example-battery/battery.mcdp"
 - "pip install -U PyMCDP"
