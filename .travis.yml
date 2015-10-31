@@ -15,7 +15,7 @@ python:
 #     - $HOME/.cache/pip
 install: 
 - "wget https://raw.githubusercontent.com/AndreaCensi/mcdp/master/example-battery/battery.mcdp"
-- "pip install -U PyMCDP"
+- "pip install --allow-external  -U PyMCDP"
 # command to run tests
 script: 
 - "mcdp-solve battery.mcdp"
