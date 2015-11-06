@@ -18,6 +18,9 @@ install:
 #- "pip install -vvv --process-dependency-links  --allow-all-external --allow-unverified ConfTools --allow-unverified PyContracts  --allow-unverified QuickApp --allow-unverified RepRep --allow-unverified gvgen  -U PyMCDP"
 - "pip install -vvv PyMCDP"
 - "python -c 'import contracts; print contracts.__version__'"
+- "python -c 'import quickapp;  print  quickapp.__version__'"
+- "python -c 'import compmake;  print  compmake.__version__'"
+- "python -c 'import reprep;    print    reprep.__version__'"
 # command to run tests
 script: 
 - "mcdp-solve battery.mcdp"
