@@ -8,7 +8,7 @@ python:
   # - "3.4"
   # - "3.5"
   # - "3.5-dev" # 3.5 development branch
-  - "pypy"
+  # - "pypy"
 # command to install dependencies
 # cache:
 #   directories:
@@ -23,7 +23,7 @@ install:
 - "python -c 'import reprep;    print    reprep.__version__'"
 # command to run tests
 script: 
-- "mcdp-solve battery.mcdp"
+- "mcdp-solve battery.mcdp '1 hour' '0.1 kg' '1.0 W' "
 # after_failure:
 # - compmake out/comptests -c "ls failed"
 # - compmake out/comptests -c "why failed"
