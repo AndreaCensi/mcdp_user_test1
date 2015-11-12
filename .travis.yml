@@ -26,8 +26,8 @@ install:
 script: 
 - "mcdp-solve battery.mcdp '1 hour' '0.1 kg' '1.0 W' "
 - "mcdp-solve --plot battery.mcdp '1 hour' '0.1 kg' '1.0 W' "
-- "mcdp-solve battery.mcdp '<1 hour, 0.1 kg, 1.0 W> "
-- "mcdp-solve --plot battery.mcdp '<1 hour, 0.1 kg, 1.0 W> "
+- "mcdp-solve battery.mcdp '<1 hour, 0.1 kg, 1.0 W>' "
+- "mcdp-solve --plot battery.mcdp '<1 hour, 0.1 kg, 1.0 W>' "
 # after_failure:
 # - compmake out/comptests -c "ls failed"
 # - compmake out/comptests -c "why failed"
