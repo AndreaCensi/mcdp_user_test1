@@ -14,7 +14,6 @@ python:
 #   directories:
 #     - $HOME/.cache/pip
 install: 
-- "wget https://raw.githubusercontent.com/AndreaCensi/mcdp/master/examples/example-battery/battery.mcdp"
 #- "pip install -vvv --process-dependency-links  --allow-all-external --allow-unverified ConfTools --allow-unverified PyContracts  --allow-unverified QuickApp --allow-unverified RepRep --allow-unverified gvgen  -U PyMCDP"
 - "pip install -vvv PyMCDP"
 - "python -c 'import mocdp; print mocdp.__version__'"
@@ -24,6 +23,7 @@ install:
 - "python -c 'import reprep;    print    reprep.__version__'"
 # command to run tests
 script: 
+- "wget https://raw.githubusercontent.com/AndreaCensi/mcdp/master/src/mcdp_data/libraries/examples/example-battery.mcdplib/battery.mcdp"
 - "mcdp-solve battery.mcdp '1 hour' '0.1 kg' '1.0 W' "
 - "mcdp-solve battery.mcdp '<1 hour, 0.1 kg, 1.0 W>' "
 - "mcdp-solve --plot battery.mcdp '1 hour' '0.1 kg' '1.0 W' "
