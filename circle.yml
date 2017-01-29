@@ -1,0 +1,27 @@
+dependencies:
+  pre:
+    # - sudo /usr/bin/npm --loglevel=silent install -g MathJax-node jsdom less 2>/dev/null 1>/dev/null
+    # - sudo apt-get -qq install -y graphviz python-numpy python-yaml python-dev python-setproctitle python-psutil python-lxml python-PIL python-matplotlib python-yaml python-pip python-tk idle python-pmw python-imaging
+    #
+    # - pip install numpy lxml matplotlib pillow junit_xml
+
+    - sudo apt-get install python-matplotlib python-numpy python-yaml graphviz
+    # - python-cjson disallowed by Travis!
+    # - python-pil not found on Travis
+
+    - "pip install -vvv PyMCDP"
+    - "python -c 'import mocdp; print mocdp.__version__'"
+    - "python -c 'import contracts; print contracts.__version__'"
+    - "python -c 'import quickapp;  print  quickapp.__version__'"
+    - "python -c 'import compmake;  print  compmake.__version__'"
+    - "python -c 'import reprep;    print    reprep.__version__'"
+    - "python -c 'import mocdp;    print    mocdp.__version__'"
+
+
+test:
+  override:
+    - "wget https://raw.githubusercontent.com/AndreaCensi/mcdp/master/src/mcdp_data/libraries/examples/example-battery.mcdplib/battery.mcdp"
+    - "mcdp-solve battery.mcdp '1 hour' '0.1 kg' '1.0 W' "
+    - "mcdp-solve battery.mcdp '<1 hour, 0.1 kg, 1.0 W>' "
+    - "mcdp-solve --plot battery.mcdp '1 hour' '0.1 kg' '1.0 W' "
+    - "mcdp-solve --plot battery.mcdp '<1 hour, 0.1 kg, 1.0 W>' "
