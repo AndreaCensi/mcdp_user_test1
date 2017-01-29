@@ -8,6 +8,8 @@ dependencies:
     - sudo apt-get install python-matplotlib python-numpy python-yaml graphviz
     # - python-cjson disallowed by Travis!
     # - python-pil not found on Travis
+    - "pip install numpy"
+    - "python -c 'import numpy;    print  numpy.__version__'"
 
     - "pip install -vvv PyMCDP"
     - "python -c 'import mocdp; print mocdp.__version__'"
